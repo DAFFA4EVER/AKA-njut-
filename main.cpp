@@ -15,7 +15,7 @@ int main(){
     buildG(G);
     int n = 0;
     cout << endl;
-    while(t!="n"){
+    while(t!="N" && t!= "n"){
         printG(G);
         cout << "\nAdd edge to vertex : ";
         cin >> data;
@@ -35,7 +35,8 @@ int main(){
         cin >> t;
     }
     
-    Keqing(G);
+    sort(G);
+
 
     return 0;
 }

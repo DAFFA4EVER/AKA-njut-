@@ -145,42 +145,19 @@ string colour(int code){
     return x;
 }
 
-void Keqing(graph G){
-    int n = 1;
-    adrVertex p, m, c;
-    adrEdge e;
+int manyVertex(graph G){
+    int n = 0;
     if(G.firstV != NULL){
-        p = G.firstV;
-        m = p;
-        cout << "Test\n";
-        p->nextV;
+        adrVertex p = G.firstV;
         while(p!=NULL){
-            if(outDegree(G, m->Idvertex) < outDegree(G, p->Idvertex)){
-                m = p;
-            }
+            n++;
             p = p->nextV;
         }
     }
-    cout << m->Idvertex <<" | "<< outDegree(G, m->Idvertex) << " | " << colour(n) << endl;
-    p = G.firstV;
-    p = p->nextV;
-    bool cek = true;
-    while(p!=NULL){
-        e = p->firstE;
-        while(e!=NULL){
-            c = G.firstV;
-            while(c != NULL && cek){
-                if(c->Idvertex == e->destVertexId){
-                    n++;
-                    cek = false;
-                }
-                c = c->nextV;
-            }
-            cek = true;
-            e = e->nextE;
-        }
-        cout << p->Idvertex <<" | "<< outDegree(G, p->Idvertex) << " | " << colour(n) << endl;
-        p = p->nextV;
-    }
+    return n;
 }
 
+void sort(graph &G){
+    // Coba pake metode pop and push, ana coba pake swap gabisa. Cobain deh pake swap, bisi urg yg salah;
+    cout << "Total Vertex : " << manyVertex(G);
+}
